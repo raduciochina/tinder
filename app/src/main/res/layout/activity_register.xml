@@ -6,4 +6,179 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="25dp"
+                android:paddingTop="55dp"
+                android:paddingRight="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="112dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/follower"
+                        android:layout_marginBottom="15dp"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create a new account"
+                        android:textStyle="bold"
+                        android:textColor="#BEDC2D2D"
+                        android:textSize="25dp"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="70dp"
+                        android:background="@color/white"
+                        android:gravity="bottom">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/email"
+                            android:hint="Email"
+                            android:inputType="textEmailAddress"
+                            android:padding="20dp"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+
+
+                        android:gravity="bottom">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/name"
+                            android:hint="Name"
+                            android:inputType="textPersonName"
+                            android:padding="20dp"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:gravity="bottom">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/password"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:padding="20dp"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:gravity="bottom">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/phone"
+                            android:hint="Phone"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:padding="20dp"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/checkbox1"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="30dp"
+                            android:text="I agree"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="If you register, you agree to the Terms of Use. From the Data Use Policy you can find out how we collect, use and distribute your data, and from the Cookie Use Policy you can find out how we use cookies and similar technologies."
+                            android:id="@+id/text2"
+                            android:clickable="true"/>
+
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/register"
+                        style="@android:style/Widget.Material.Button.Borderless.Colored"
+                        android:layout_marginTop="30dp"
+                        android:background="#FD297B"
+                        android:padding="15dp"
+                        android:text="Register"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/existing"
+                    android:padding="15dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="If you already have an account please login."/>
+
+            </LinearLayout>
+
+
+
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
