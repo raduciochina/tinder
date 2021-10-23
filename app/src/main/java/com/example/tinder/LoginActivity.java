@@ -1,5 +1,6 @@
 package com.example.tinder;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,23 +10,24 @@ import android.widget.EditText;
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
-
+    private final int activityRequestCode = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent i = getIntent();
 
-        String textDataEmail = i.getExtras().getString("textDataEmail", "");
-        String textDataPassword = i.getExtras().getString("textDataPassword", "");
-
-        editTextEmail = findViewById(R.id.email);
-        editTextPassword = findViewById(R.id.password);
-
-        editTextEmail.setText(textDataEmail);
-        editTextPassword.setText(textDataPassword);
+        Bundle wrapper = getIntent().getExtras();
+        if(wrapper!=null){
+            User user = (User) wrapper.getSerializable("loginUser");
+            editTextEmail = findViewById(R.id.email);
+            editTextPassword = findViewById(R.id.password);
+            editTextPassword.setText(user.getPassword());
+            editTextEmail.setText(user.getEmail());
+        }
 
     }
+
+
 }

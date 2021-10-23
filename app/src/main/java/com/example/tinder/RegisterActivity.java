@@ -43,19 +43,17 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setPassword(editTextParola.getText().toString());
                 user.setPhone(editTextTelefon.getText().toString());
 
-                //Toast.makeText(RegisterActivity.this, user.toString(), Toast.LENGTH_SHORT).show();
+                User loginUser = new User(editTextEmail.getText().toString(), editTextParola.getText().toString());
+                Bundle wrapper = new Bundle();
+
+                wrapper.putSerializable("loginUser", loginUser);
+
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtras(wrapper);
+                startActivity(intent);
+
                 }
-
-                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
-
-                String textDataEmail = editTextEmail.getText().toString();
-                String textDataPassword = editTextParola.getText().toString();
-
-                i.putExtra("textDataEmail", textDataEmail);
-                i.putExtra("textDataPassword", textDataPassword);
-
-                startActivity(i);
-
+                
             }
         });
     }
