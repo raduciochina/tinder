@@ -2,9 +2,8 @@ package com.example.tinder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,14 +11,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(MainActivity.this, LoginReg.class);
-                startActivity(i);
-                finish();
-            }
-        },2500);
+    public void DislikeBtn(View view) {
+    }
+
+    public void LikeBtn(View view) {
     }
 }
