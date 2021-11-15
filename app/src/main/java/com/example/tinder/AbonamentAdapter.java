@@ -30,6 +30,11 @@ public class AbonamentAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return 0;
     }
+    public void updateList(List<Abonament> lst){
+        this.listaAbonamente.clear();
+        this.listaAbonamente.addAll(lst);
+        notifyDataSetChanged();
+    }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {

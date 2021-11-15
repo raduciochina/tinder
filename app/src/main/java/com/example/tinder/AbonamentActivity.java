@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,38 @@ public class AbonamentActivity extends AppCompatActivity {
         abonamentAdapter = new AbonamentAdapter(getLista());
 
         listViewAbonamente.setAdapter(abonamentAdapter);
+
+        JSONReader reader = new JSONReader();
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                reader.read("https://jsonkeeper.com/b/3P4K\n", new IResponse() {
+                    @Override
+                    public void onSuccess(List<Abonament> abonamentList) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(AbonamentActivity.this, abonamentList.toString(), Toast.LENGTH_LONG).show();
+                                abonamentAdapter.updateList(abonamentList);
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onError(String message) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(AbonamentActivity.this, message, Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+        thread.start();
 
     }
 
