@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginReg extends AppCompatActivity {
 
     private Button btnLogin, btnRegister;
+    private IUserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +39,33 @@ public class LoginReg extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                userDAO = AppDatabase.getInstance(getApplicationContext()).getDatabaseUser().userDAO();
+
+                List<User> listaUsersDefault = getDefaultUsers();
+
+                userDAO.insertAll(listaUsersDefault.get(0), listaUsersDefault.get(1));
+            }
+        });
+
+        thread.start();
+
+
+    }
+
+    public List<User> getDefaultUsers() {
+        User user1 = new User("admin1_tinder@yahoo.com","admin1","admin", "0000");
+        User user2 = new User("admin2_tinder@yahoo.com","admin2","admin", "1111");
+
+        List<User> listaDefaultUsers = new ArrayList<>();
+
+        listaDefaultUsers.add(user1);
+        listaDefaultUsers.add(user2);
+
+        return listaDefaultUsers;
+
     }
 }

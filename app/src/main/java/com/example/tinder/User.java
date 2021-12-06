@@ -1,8 +1,15 @@
 package com.example.tinder;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName = "user")
 public class User implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String email;
     private String name;
     private String password;
@@ -21,6 +28,14 @@ public class User implements Serializable {
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
