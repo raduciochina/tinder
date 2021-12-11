@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549022564497",
+    "project_id": "tinder-dam",
+    "storage_bucket": "tinder-dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549022564497:android:3d0530c2b978dbef947f30",
+        "android_client_info": {
+          "package_name": "com.example.tinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549022564497-ok74j2tq90mjrdout6clfsd0m3rmvenm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBJ4jUSW1O0Wd5ie1Wexa1hFbANH9OxP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549022564497-ok74j2tq90mjrdout6clfsd0m3rmvenm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
